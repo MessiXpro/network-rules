@@ -6,7 +6,7 @@ desc: >-
 
 http:
   header-rewrite:
-    - ^https?:\/\/.*).bing\.com/(.*) request-add X-Forwarded-For 1.1.1.1
+    - ^https?:\/\/(.*).bing\.com/(.*) request-add X-Forwarded-For 1.1.1.1
 dns:
   nameserver-policy:
     'www.bing.com': 1.1.1.1

@@ -5,13 +5,8 @@ desc: >-
   注意：使用此覆写前您的账号必须获得 New Bing 的使用资格，并将"国家或地区"设置为 New Bing 支持的地区
 
 http:
-  mitm:
-    - 'www.bing.com'
-    - 'assets.msn.com'
-    
-  url-rewrite:
-    - ^https:\/\/assets\.msn\.com\/service\/news\/ - reject-dict
-    - ^https:\/\/www\.bing\.com\/api\/v7\/news\/ - reject-dict
-
   header-rewrite:
     - ^https?:\/\/www\.bing\.com request-add X-Forwarded-For 1.1.1.1
+dns:
+  nameserver-policy:
+    'www.bing.com': 1.1.1.1
